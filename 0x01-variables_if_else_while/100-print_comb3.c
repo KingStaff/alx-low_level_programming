@@ -1,31 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - This program prints the numbers from 00 to 99.
- * Numbers are separated by a comma and a space, are printed
- * in ascending order, and putchar is used to print to screen.
- * Return: Always 0 (Success)
+ * main - prints all possible different combinations of two digits
+ * Return: ALways 0 (Success)
  */
 int main(void)
 {
-	int a, b;
+	int n, m;
 
-	for (b = '0'; b <= '9'; b++)
+	for (n = 48; n <= 56; n++)
 	{
-		for (a = '0'; a <= '9'; a++)
+		for (m = 49; m <= 57; m++)
 		{
-			putchar(b);
-			putchar(a);
-			if (b != '9' || a != '9')
+			if (m > n)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(n);
+				putchar(m);
+				if (n != 56 || m != 57)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-
 		}
 	}
-
 	putchar('\n');
-
 	return (0);
 }
