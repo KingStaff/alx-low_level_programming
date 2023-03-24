@@ -2,12 +2,10 @@
 
 /**
  * print_times_table - prints the n times table, starting with 0.
- *
  * @n: int type
  *
- *  Return: n times table
+ * Return: n times table
  */
-
 void print_times_table(int n)
 {
     int row, col;
