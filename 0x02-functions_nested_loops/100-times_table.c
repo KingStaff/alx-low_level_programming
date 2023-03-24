@@ -1,48 +1,50 @@
 #include "main.h"
+
 /**
- * print_times_table - prints the n times table, starting with 0.
- * @n: int type
+ * print_times_table - prints the n times table, starting with 0
  *
- * Return: n times table
+ * @n: number of times to print the times table
+ *
+ * Return: void
  */
+
 void print_times_table(int n)
 {
-    int row, col;
+	int i, j, result;
 
-    if (n >= 0 && n <= 15)
-    {
-        for (row = 0; row <= n; row++)
-        {
-            for (col = 0; col <= n; col++)
-            {
-                if (col == 0)
-                    _putchar(row * col + '0');
-                else if (row * col <= 9)
-                {
-                    _putchar(',');
-                    _putchar(' ');
-                    _putchar(' ');
-                    _putchar(' ');
-                    _putchar(row * col + '0');
-                }
-                else if (row * col <= 99)
-                {
-                    _putchar(',');
-                    _putchar(' ');
-                    _putchar(' ');
-                    _putchar((row * col) / 10 + '0');
-                    _putchar((row * col) % 10 + '0');
-                }
-                else
-                {
-                    _putchar(',');
-                    _putchar(' ');
-                    _putchar((row * col) / 100 + '0');
-                    _putchar(((row * col) / 10) % 10 + '0');
-                    _putchar((row * col) % 10 + '0');
-                }
-            }
-            _putchar('\n');
-        }
-    }
+	if (n >= 0 && n <= 15)
+	{
+		for (i = 0; i <= n; i++)
+		{
+			_putchar('0');
+
+			for (j = 1; j <= n; j++)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				result = i * j;
+
+				if (result <= 9)
+				{
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(result + '0');
+				}
+				else if (result <= 99)
+				{
+					_putchar(' ');
+					_putchar(result / 10 + '0');
+					_putchar(result % 10 + '0');
+				}
+				else
+				{
+					_putchar(result / 100 + '0');
+					_putchar((result / 10) % 10 + '0');
+					_putchar(result % 10 + '0');
+				}
+			}
+			_putchar('\n');
+		}
+	}
 }
